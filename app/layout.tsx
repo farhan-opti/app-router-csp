@@ -8,9 +8,6 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import Script from 'next/script';
 
-const geistSans = GeistSans;
-const geistMono = GeistMono;
-
 export const metadata: Metadata = {
   title: { default: 'Next.js Playground', template: '%s | Next.js Playground' },
   metadataBase: new URL('https://app-router.vercel.app'),
@@ -34,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="[color-scheme:dark]">
       <body
-        className={`overflow-y-scroll bg-gray-950 font-sans ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`overflow-y-scroll bg-gray-950 font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >
         <Script
           src="https://cdn.optimizely.com/js/5160038189236224.js"

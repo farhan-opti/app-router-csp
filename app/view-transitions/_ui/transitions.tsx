@@ -94,12 +94,6 @@ export function HorizontalTransition({
 
 /**
  * Wrapper for shared element transitions between views.
- * Enables morphing of elements that persistacross transitions.
- *
- * @example
- * <SharedTransition name="product-image" share="animate-morph">
- *   <ProductImage src={image} alt={name} />
- * </SharedTransition>
  */
 export function SharedTransition({
   children,
