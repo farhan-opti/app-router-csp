@@ -4,13 +4,10 @@ import { type CodeHikeConfig } from 'codehike/mdx';
 
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  cacheComponents: true,
   experimental: {
     inlineCss: true,
-    dynamicIO: true,
-    clientSegmentCache: true,
     viewTransition: true,
-    prerenderEarlyExit: false,
-    routerBFCache: true,
   },
 } satisfies NextConfig;
 
