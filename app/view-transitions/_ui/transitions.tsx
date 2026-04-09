@@ -1,11 +1,7 @@
 'use client';
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
-import {
-  unstable_addTransitionType as addTransitionType,
-  startTransition,
-  unstable_ViewTransition as ViewTransition,
-} from 'react';
+import { startTransition } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -26,7 +22,6 @@ export function TransitionLink({ type, ...props }: TransitionLinkProps) {
     event.preventDefault();
 
     startTransition(() => {
-      addTransitionType(type);
       router.push(props.href);
     });
   };
@@ -91,35 +86,23 @@ export function HorizontalTransition({
   exit: TransitionMap;
 }) {
   return (
-    <ViewTransition enter={enter} exit={exit}>
+    <>
       {children}
-    </ViewTransition>
+    </>
   );
 }
 
 /**
  * Wrapper for shared element transitions between views.
- * Enables morphing of elements that persistacross transitions.
- *
- * @example
- * <SharedTransition name="product-image" share="animate-morph">
- *   <ProductImage src={image} alt={name} />
- * </SharedTransition>
  */
 export function SharedTransition({
-  name,
   children,
-  share,
 }: {
   name: TransitionId;
   children: React.ReactNode;
   share?: ViewTransitionClass;
 }) {
-  return (
-    <ViewTransition name={name} share={share}>
-      {children}
-    </ViewTransition>
-  );
+  return <>{children}</>;
 }
 
 /**

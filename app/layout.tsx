@@ -4,15 +4,9 @@ import db from '#/lib/db';
 import Byline from '#/ui/byline';
 import { GlobalNav } from '#/ui/global-nav';
 import { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import Script from 'next/script';
-
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   title: { default: 'Next.js Playground', template: '%s | Next.js Playground' },
@@ -37,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="[color-scheme:dark]">
       <body
-        className={`overflow-y-scroll bg-gray-950 font-sans ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`overflow-y-scroll bg-gray-950 font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >
         <Script
           src="https://cdn.optimizely.com/js/5160038189236224.js"
