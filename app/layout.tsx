@@ -33,6 +33,7 @@ export default function RootLayout({
       <body
         className={`overflow-y-scroll bg-gray-950 font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >
+        {/* Intentionally omitting nonce so CSP blocks this script */}
         <Script
           src="https://cdn.optimizely.com/js/5160038189236224.js"
           strategy="beforeInteractive"
