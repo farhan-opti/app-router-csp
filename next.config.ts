@@ -5,10 +5,6 @@ import { type CodeHikeConfig } from 'codehike/mdx';
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   cacheComponents: true,
-  experimental: {
-    inlineCss: true,
-    viewTransition: true,
-  },
 } satisfies NextConfig;
 
 const codeHikeConfig = {
